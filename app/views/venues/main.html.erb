@@ -1,0 +1,16 @@
+<div class="content">
+  <header class="top container-fluid">
+    <div class="container">
+      <div class="col-sm-6 col-sm-offset-2">
+        <div class="form-group row">
+          <%= form_tag results_venues_path, method: :get do %>
+            <%= text_field_tag "search[query]" %>
+            <%= submit_tag "Go", class: "btn btn-success" %>
+          <% end %>
+
+          <%= link_to "Add Restaurant", venues_path, method: :post %>
+        </div>
+      </div>
+    </div><!-- end .container -->
+  </section>
+</div><!-- end #content -->

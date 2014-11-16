@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  venue_id: 1
+  wifi_quality: 1
+  coffee_quality: 1
+  coffee_price: 1
+  chair_drag_loudness: 1
+  outlets_available: 1
+  temperature: 1
+  awesome_people: MyString
+  comment: MyString
+
+two:
+  user_id: 1
+  venue_id: 1
+  wifi_quality: 1
+  coffee_quality: 1
+  coffee_price: 1
+  chair_drag_loudness: 1
+  outlets_available: 1
+  temperature: 1
+  awesome_people: MyString
+  comment: MyString

@@ -1,0 +1,22 @@
+<div class="content">
+  <header class="top container-fluid">
+    <div class="container">
+      <div class="col-sm-6 col-sm-offset-2">
+        <%= form_for @venue, url: venue_venue_part_path(@venue.id, params[:id]), as: :venue do |f|%>
+          <p> Confirm Results for <%= @venue.name %></p>
+
+          <% @venue.results.each do |possible_venue| %>
+            <div>
+              <%= f.radio_button :factual_id, possible_venue.factual_id  %>
+              <p><%= possible_venue.name %></p>
+              <p><%= possible_venue.address %></p>
+              <p><%= possible_venue.locality %></p>
+              <p><%= link_to possible_venue.website, possible_venue.website %></p>
+            </div>
+          <% end %>
+          <%= f.submit "Complete" %>
+        <% end %>
+      </div>
+    </div><!-- end .container -->
+  </section>
+</div><!-- end #content -->

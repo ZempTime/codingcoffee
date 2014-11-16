@@ -1,0 +1,16 @@
+<div class="content">
+  <header class="top container-fluid">
+    <div class="container">
+      <div class="col-sm-6 col-sm-offset-2">
+        <%= form_for @venue, url: venue_venue_part_path(@venue.id, params[:id]), as: :venue do |f|%>
+          <div>
+            <%= f.label :name, "Name of Venue:" %>
+            <%= f.text_field :name %>
+          </div>
+          <p>Currently for St. Louis Only</p>
+          <%= f.submit "Next" %>
+        <% end %>
+      </div>
+    </div><!-- end .container -->
+  </section>
+</div><!-- end #content -->
