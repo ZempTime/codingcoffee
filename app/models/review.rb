@@ -10,13 +10,13 @@ class Review < ActiveRecord::Base
   COFFEE_PRICE_SCALE = ["pricy", "affordable", "marvelous"]
   CHAIR_DRAG_LOUDNESS_SCALE = ["earbleed city", "typical cafe", "symphonic silence"]
   OUTLETS_AVAILABLE_SCALE = ["no outlets", "some outlets", "bountiful outlets"]
-  TEMPERATURE_SCALE = ["bring your wardrobe", "usually good", "always on point"]
+  TEMPERATURE_SCALE = ["bring your wardrobe", "50/50", "always on point"]
 
 
   def generate_options(scale)
     result = {}
-    scale.each_with_index do |v, i|
-      result[v] = i+1
+    scale.each_with_index do |k, i|
+      result[k] = i+1
     end
     result
   end
