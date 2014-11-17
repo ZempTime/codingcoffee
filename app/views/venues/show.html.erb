@@ -3,7 +3,7 @@
     <div class="container">
       <div class="col-sm-6 col-sm-offset-2">
         <h1><%= @venue.name %></h1>
-        <p><%= @venue.wifi_quality %></p>
+        <%= link_to "What's it like to code here?", new_venue_review_path(@venue)  %>
       </div>
     </div><!-- end .container -->
   </section>

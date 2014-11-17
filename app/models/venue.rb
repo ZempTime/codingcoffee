@@ -21,4 +21,5 @@ class Venue < ActiveRecord::Base
 
     Venue.where(factual_id: factual_id).where.not(id: id).destroy_all
   end
+
 end
