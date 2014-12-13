@@ -3,6 +3,10 @@ class VenuesController < ApplicationController
 
   def index
     @venues = Venue.all
+    @hash = Gmaps4rails.build_markers(@venues) do |venue, marker|
+      marker.lat venue.lat
+      marker.lng venue.lng
+    end
   end
 
   def show

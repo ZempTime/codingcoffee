@@ -1,10 +1,6 @@
-
-
 <div class="content">
   <header class="top container-fluid">
     <div class="container">
-      <h1 class="text-center">Find a good coffee shop to code at.</h1>
-      <h2 class="text-center lead">Ask the big questions: How's the wifi? Will I have an outlet? How loud are chairs on the ground?</h2>
       <div class="row">
         <div class="col-md-3">
           <ul>
@@ -15,7 +11,7 @@
             <li>Open Earliest</li>
             <li>Outlet Coverage</li>
           </ul>
-         <p> - - - </p>
+          <p> - - - </p>
           <ul>
             <li>best wifi</li>
             <li>best coffee</li>
@@ -30,9 +26,21 @@
         </div>
 
         <div class="col-md-9">
-          <%= render @venues %>
+          <div style='width: 800px;'>
+            <div id="map" style='width: 800px; height: 400px;'></div>
+          </div>
         </div>
       </div>
     </div><!-- end .container -->
   </section>
 </div><!-- end #content -->
+
+
+<script type="text/javascript" charset="utf-8">
+handler = Gmaps.build('Google');
+handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+    markers = handler.addMarkers(<%=raw @hash.to_json %>);
+    handler.bounds.extendWith(markers);
+    handler.fitMapToBounds();
+    });
+</script>

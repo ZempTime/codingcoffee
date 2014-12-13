@@ -52,3 +52,6 @@ gem 'sunspot_solr', '~> 2.1.1'
 gem 'devise', '~> 3.4.0'
 gem 'factual-api', '~> 1.3.17'
 gem 'evil_icons'
+
+gem 'gmaps4rails', '~> 2.1.2'
+gem 'underscore-rails', '~> 1.7.0'
