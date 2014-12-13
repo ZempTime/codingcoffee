@@ -18,7 +18,7 @@
                 </button>
                 <!-- I use id's instead of classes for most of my css because I have no idea what I'm doing. forgive me D: -->
                 <ul class="dropdown-menu dropdown-menu-right" id="navbar-search-dropdown" role="menu">
-                  <li><a href="#">best coffee</a></li>
+                  <li><%= link_to "best coffee", venues_path(facet: "coffee_quality") %></li>
                   <li><a href="#">best wifi</a></li>
                   <li><a href="#">best outlet coverage</a></li>
                   <li><a href="#">most reviewed</a></li>

@@ -2,9 +2,9 @@ class VenuesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
-    @venues = Venue.search do
-      fulltext params[:query]
-    end.results
+    @venues = Search.execute(params)
+
+    @emphasis = params[:facet] || :overall_rating
 
     @hash = Gmaps4rails.build_markers(@venues) do |venue, marker|
       marker.lat venue.lat
