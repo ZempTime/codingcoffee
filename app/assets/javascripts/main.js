@@ -1,6 +1,12 @@
 $( document ).ready(function() {
+
+  if($.trim($('#navbar-search-input').val() ) !== '' ) {
+      $("#navbar-search-options").hide();
+      $("#navbar-search-cancel").show();
+  }
+
   $("#navbar-search-input").on('input', function() {
-    if($.trim( $('#navbar-search-input').val() ) !== '' ) {
+    if($.trim($('#navbar-search-input').val() ) !== '' ) {
       $("#navbar-search-options").hide();
       $("#navbar-search-cancel").show();
     } else {

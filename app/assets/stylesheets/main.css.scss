@@ -7,9 +7,6 @@ body {
 }
 
 .venue-partial {
-  width: 300px;
-  height: 100px;
-  box-shadow: 2px 2px 1px #888888;
 }
 
 #navbar-search-cancel {
@@ -19,5 +16,9 @@ body {
 #navbar-search-input {
   height: 44px;
   width: 200px;
+}
+
+#navbar-search-dropdown {
+  width: 251px;
 }
 

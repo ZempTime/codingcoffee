@@ -3,25 +3,9 @@
     <div class="container">
       <div class="row">
         <div class="col-md-3">
-          <ul>
-            <li>Highest Rated</li>
-            <li>Most Reviewed</li>
-            <li>Closest to Me</li>
-            <li>Open Latest</li>
-            <li>Open Earliest</li>
-            <li>Outlet Coverage</li>
-          </ul>
-          <p> - - - </p>
-          <ul>
-            <li>best wifi</li>
-            <li>best coffee</li>
-            <li>cheapest coffee</li>
-            <li></li>
-          </ul>
-          <p>- - - </p>
+          <%= render @venues %>
           <ul>
             <li><%= link_to "add a place", venues_path, method: :post %></li>  
-            <li><%= text_field_tag "query", "", placeholder: "Specific Place...?" %></li>
           </ul>
         </div>
 

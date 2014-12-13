@@ -1,21 +1,45 @@
 class Venue < ActiveRecord::Base
   has_many :reviews
 
-  searchable do
-    integer :wifi_quality do
+  ATTRIBUTES = %w[wifi_quality coffee_quality coffee_price chair_drag_loudness outlets_available temperature]
 
-    end
+  searchable do
+    integer :wifi_quality
     integer :coffee_quality
     integer :coffee_price
     integer :chair_drag_loudness
     integer :outlets_available
     integer :temperature
-    text :awesome_people
-    text :comment
+    integer :overall_rating
+    latlon(:location) { Sunspot::Util::Coordinates.new(lat, lng) }
+    text :name
+    text :awesome_people do
+      reviews.pluck(:awesome_people)
+    end
+    text :comments do
+      reviews.pluck(:comment)
+    end
   end
 
-  def wifi_quality
-    reviews.pluck(:wifi_quality).compact
+  ATTRIBUTES.each do |attribute|
+    define_method(attribute.to_sym) do
+      aggregate_rating_for(attribute.to_s)
+    end
+  end
+
+  def aggregate_rating_for(attribute)
+    return 0 unless reviews.any?
+
+    total = reviews.pluck(attribute.to_sym).compact.sum
+    average = total.to_f / reviews.count
+    average.round(0)
+  end
+
+  def overall_rating
+    return 0 unless reviews.any?
+
+    ratings = ATTRIBUTES.map {|attr| aggregate_rating_for(attr) }
+    ratings.sum.to_f / ATTRIBUTES.length
   end
 
   def populate_from_factual

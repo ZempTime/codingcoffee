@@ -55,3 +55,5 @@ gem 'evil_icons'
 
 gem 'gmaps4rails', '~> 2.1.2'
 gem 'underscore-rails', '~> 1.7.0'
+gem 'progress_bar'
+gem 'will_paginate', '~> 3.0.7'
