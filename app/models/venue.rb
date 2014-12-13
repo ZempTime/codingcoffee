@@ -11,6 +11,7 @@ class Venue < ActiveRecord::Base
     integer :outlets_available
     integer :temperature
     integer :overall_rating
+    integer :review_count
     latlon(:location) { Sunspot::Util::Coordinates.new(lat, lng) }
     text :name
     text :awesome_people do
@@ -40,6 +41,10 @@ class Venue < ActiveRecord::Base
 
     ratings = ATTRIBUTES.map {|attr| aggregate_rating_for(attr) }
     ratings.sum.to_f / ATTRIBUTES.length
+  end
+
+  def review_count
+    reviews.count
   end
 
   def populate_from_factual

@@ -18,10 +18,11 @@
                 </button>
                 <!-- I use id's instead of classes for most of my css because I have no idea what I'm doing. forgive me D: -->
                 <ul class="dropdown-menu dropdown-menu-right" id="navbar-search-dropdown" role="menu">
+                  <li><%= link_to "highest rated", venues_path(facet: "overall_rating") %></li>
                   <li><%= link_to "best coffee", venues_path(facet: "coffee_quality") %></li>
-                  <li><a href="#">best wifi</a></li>
-                  <li><a href="#">best outlet coverage</a></li>
-                  <li><a href="#">most reviewed</a></li>
+                  <li><%= link_to "best wifi", venues_path(facet: "wifi_quality") %></li>
+                  <li><%= link_to "outlet coverage", venues_path(facet: "outlets_available") %></li>
+                  <li><%= link_to "most reviewed", venues_path(facet: "review_count") %></li>
                   <li class="divider"></li>
                   <li><a href="#">closest to me</a></li>
                   <li><a href="#">open latest</a></li>
@@ -36,9 +37,6 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#about">About</a></li>
-        <li><a href="#contact">Find a Place</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
         <li><%= link_to "Account", edit_user_registration_path(current_user) if user_signed_in? %></li>
         <li><%= link_to "Logout", destroy_user_session_path(current_user) if user_signed_in? %></li>
         <li><%= link_to "Sign Up", new_user_registration_path unless user_signed_in? %></li>
