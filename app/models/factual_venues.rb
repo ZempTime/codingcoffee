@@ -2,7 +2,7 @@ class FactualVenues
   require 'factual'
   require 'ostruct'
 
-  @@client = Factual.new("Fd1rX71s1DGPCty647HGDnvvCvgT6bxGaaff4M8T", "6UKM5u033zunzDaO8GdOL1dzQ8yTPj6PwHUSfApF")
+  @@client = Factual.new(Rails.application.secrets.factual_key, Rails.application.secrets.factual_secret)
 
   def self.client
     @@client

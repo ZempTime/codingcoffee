@@ -9,6 +9,6 @@ Rails.application.routes.draw do
     resources :venue_parts, only: [:edit, :update]
   end
 
-  root to: "venues#main"
+  root to: "venues#index"
 
 end

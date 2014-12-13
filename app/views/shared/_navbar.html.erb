@@ -1,25 +1,48 @@
-    <!-- Static navbar -->
-    <nav class="navbar navbar-default navbar-static-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">CodingCoffee.cc</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Find a Place</a></li>
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <li><%= link_to "Account", edit_user_registration_path(current_user) if user_signed_in? %></li>
-            <li><%= link_to "Logout", destroy_user_session_path(current_user) if user_signed_in? %></li>
-            <li><%= link_to "Sign Up", new_user_registration_path unless user_signed_in? %></li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </nav>
+<!-- Static navbar -->
+<nav class="navbar navbar-default navbar-static-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <div class="row">
+        <div class="col-xs-6">
+          <form action="/" method="get" class="navbar-form navbar-left">
+            <div class="input-group">
+              <input type="text" name="query" class="form-control input-xLarge" id="navbar-search-input">
+              <div class="input-group-btn">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false" id="navbar-search-button">
+                  <div id="navbar-search-options">
+                    <%= evil_icon 'ei-chevron-down', size: :s %>
+                  </div>
+                  <div id="navbar-search-cancel">
+                    <%= evil_icon 'ei-close-o', size: :s %>
+                  </div>
+                </button>
+                <!-- I use id's instead of classes for most of my css because I have no idea what I'm doing. forgive me D: -->
+                <ul class="dropdown-menu dropdown-menu-right" id="navbar-search-dropdown" role="menu">
+                  <li><a href="#">best coffee</a></li>
+                  <li><a href="#">best wifi</a></li>
+                  <li><a href="#">best outlet coverage</a></li>
+                  <li><a href="#">most reviewed</a></li>
+                  <li class="divider"></li>
+                  <li><a href="#">closest to me</a></li>
+                  <li><a href="#">open latest</a></li>
+                  <li><a href="#">open earliest</a></li>
+                </ul>
+              </div><!-- /btn-group -->
+            </div><!-- /input-group -->
+          </form>
+        </div><!-- /.col-lg-6 -->
+      </div><!-- /.row -->
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Find a Place</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to "Account", edit_user_registration_path(current_user) if user_signed_in? %></li>
+        <li><%= link_to "Logout", destroy_user_session_path(current_user) if user_signed_in? %></li>
+        <li><%= link_to "Sign Up", new_user_registration_path unless user_signed_in? %></li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div>
+</nav>
