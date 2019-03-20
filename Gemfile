@@ -49,7 +49,7 @@ end
 gem 'bootstrap-sass', '~> 3.2.0.2'
 gem 'sunspot_rails', '~> 2.1.1'
 gem 'sunspot_solr', '~> 2.1.1'
-gem 'devise', '~> 3.4.0'
+gem 'devise', '~> 4.6.0'
 gem 'factual-api', '~> 1.3.17'
 gem 'evil_icons'
 
