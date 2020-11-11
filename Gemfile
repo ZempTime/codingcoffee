@@ -50,7 +50,7 @@ gem 'bootstrap-sass', '~> 3.2.0.2'
 gem 'sunspot_rails', '~> 2.1.1'
 gem 'sunspot_solr', '~> 2.1.1'
 gem 'devise', '~> 3.4.0'
-gem 'factual-api', '~> 1.3.17'
+gem 'factual-api', '~> 1.3.20'
 gem 'evil_icons'
 
 gem 'gmaps4rails', '~> 2.1.2'
