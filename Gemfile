@@ -6,11 +6,11 @@ gem 'rails', '6.0.3.5'
 # Use mysql as the database for Active Record
 gem 'mysql2'
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0.8'
+gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails', '~> 4.2.2'
+gem 'coffee-rails', '~> 4.0.1'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
 
@@ -49,7 +49,7 @@ end
 gem 'bootstrap-sass', '~> 3.2.0.2'
 gem 'sunspot_rails', '~> 2.1.1'
 gem 'sunspot_solr', '~> 2.1.1'
-gem 'devise', '~> 4.7.0'
+gem 'devise', '~> 3.4.0'
 gem 'factual-api', '~> 1.3.17'
 gem 'evil_icons'
 
