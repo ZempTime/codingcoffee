@@ -47,7 +47,7 @@ group :development do
 end
 
 gem 'bootstrap-sass', '~> 3.2.0.2'
-gem 'sunspot_rails', '~> 2.1.1'
+gem 'sunspot_rails', '~> 2.2.0'
 gem 'sunspot_solr', '~> 2.1.1'
 gem 'devise', '~> 4.7.0'
 gem 'factual-api', '~> 1.3.17'
