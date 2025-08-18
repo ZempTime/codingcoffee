@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '6.0.3.5'
+gem 'rails', '7.1.5.2'
 # Use mysql as the database for Active Record
 gem 'mysql2'
 # Use SCSS for stylesheets
@@ -42,12 +42,12 @@ gem 'spring',        group: :development
 group :development do
   gem "better_errors"
   gem "binding_of_caller"
-  gem "annotate"
+  gem "annotate", ">= 2.6.6"
   gem 'quiet_assets'
 end
 
 gem 'bootstrap-sass', '~> 3.2.0.2'
-gem 'sunspot_rails', '~> 2.1.1'
+gem 'sunspot_rails', '~> 2.2.0'
 gem 'sunspot_solr', '~> 2.1.1'
 gem 'devise', '~> 4.7.0'
 gem 'factual-api', '~> 1.3.17'
